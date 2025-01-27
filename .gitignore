@@ -12,3 +12,6 @@
 
 # Ignore the downloaded clip models
 .clip_models/*.onnx
+
+# Built gems
+*.gem
