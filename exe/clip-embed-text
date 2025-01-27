@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+
+require_relative "../lib/clip"
+
+
+if ARGV.length != 1
+  puts "Usage: clip-embed-text <text>"
+  exit 1
+end
+
+begin
+  puts Clip::Model.new.encode_text(ARGV[0])
+rescue => e
+  puts "Error: #{e.message}"
+  exit 1
+end
