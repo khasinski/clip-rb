@@ -2,11 +2,10 @@ PATH
   remote: .
   specs:
     clip-rb (0.1.0)
-      logger
-      net-http
-      onnxruntime
-      set
-      zlib
+      logger (~> 1.6)
+      net-http (~> 0.6.0)
+      onnxruntime (~> 0.9.3)
+      zlib (~> 3.2)
 
 GEM
   remote: https://rubygems.org/
@@ -35,7 +34,6 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.13.0)
     rspec-support (3.13.2)
-    set (1.1.1)
     uri (1.0.2)
     zlib (3.2.1)
 
