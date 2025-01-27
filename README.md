@@ -1,18 +1,24 @@
 # clip-rb
 
-[![Gem Version](https://badge.fury.io/rb/clip-rb.svg)](https://badge.fury.io/rb/clip-rb)
+[![Gem Version](https://badge.fury.io/rb/clip-rb.svg)](https://badge.fury.io/rb/clip-rb)  
 [![Test](https://github.com/khasinski/clip-rb/workflows/clip-rb/badge.svg)](https://github.com/khasinski/clip-rb/actions/workflows/main.yml)
 
-Clip replacement that uses ONNX models. No Python required! 
+**clip-rb** is a Ruby implementation of [OpenAI CLIP](https://openai.com/index/clip/) powered by ONNX models—no Python required!
+
+CLIP (Contrastive Language–Image Pre-training) is a powerful neural network developed by OpenAI. It connects text and images by learning shared representations, enabling tasks such as image-to-text matching, zero-shot classification, and visual search. With clip-rb, you can easily encode text and images into high-dimensional embeddings for similarity comparison or use in downstream applications like caption generation and vector search.
+
+---
 
 ## Requirements
 
 - Ruby 3.0.0 or later
-- ONNX models for CLIP (downloaded automatically on first use)
+- ONNX CLIP models (downloaded automatically on first use)
+
+---
 
 ## Installation
 
-Install the gem and add to the application's Gemfile by executing:
+Add the gem to your application by executing:
 
 ```bash
 bundle add clip-rb
@@ -31,10 +37,14 @@ require 'clip'
 
 clip = Clip::Model.new
 
-clip.encode_text("a photo of a cat") # => [0.15546110272407532, 0.07329428941011429, ...]
+text_embedding = clip.encode_text("a photo of a cat")
+# => [0.15546110272407532, 0.07329428941011429, ...]
 
-clip.encode_image("test/fixtures/test.jpg") # => [0.22115306556224823,, 0.19343754649162292, ...]
+image_embedding = clip.encode_image("test/fixtures/test.jpg")
+# => [0.22115306556224823, 0.19343754649162292, ...]
 ```
+
+💡 Tip: Use cosine similarity for KNN vector search when comparing embeddings!
 
 ## CLI
 
@@ -44,8 +54,6 @@ Additionally you can fetch embeddings by calling:
 $ clip-embed-text "a photo of a cat"
 $ clip-embed-image test/fixtures/test.jpg
 ```
-
-Use KNN vector search to find similar images, remember to use cosine distance!
 
 ## Development
 
