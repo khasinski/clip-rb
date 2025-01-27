@@ -1,8 +1,8 @@
-require "net/http"
-require "fileutils"
 require_relative "clip/model"
 require_relative "clip/tokenizer"
 require_relative "clip/image_preprocessor"
+require "net/http"
+require "fileutils"
 require "logger"
 
 module Clip
