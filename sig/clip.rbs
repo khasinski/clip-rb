@@ -1,0 +1,3 @@
+module Clip
+  VERSION: String
+end
