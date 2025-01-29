@@ -7,6 +7,14 @@
 
 CLIP (Contrastive Language–Image Pre-training) is a powerful neural network developed by OpenAI. It connects text and images by learning shared representations, enabling tasks such as image-to-text matching, zero-shot classification, and visual search. With clip-rb, you can easily encode text and images into high-dimensional embeddings for similarity comparison or use in downstream applications like caption generation and vector search.
 
+## Why do I need this?
+
+It's a key piece of tech to write an unlabeled image search. You can upload images and then search them by text or using another image as a reference.
+
+The other thing you need is a knn search in a vector database. Generate embeddings for images using this, store them in the database. When user wants to search generate embeddings for their query or image, and do a vector search to find the relevant images.
+
+See [neighbor gem](https://github.com/ankane/neighbor) to learn more about vector search.
+
 ---
 
 ## Requirements
