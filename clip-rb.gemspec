@@ -37,7 +37,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "zlib", "~> 3.2"
   spec.add_dependency "logger", "~> 1.6"
   spec.add_dependency "numo-narray", "~> 0.9.2"
-  spec.add_dependency "mini_magick", "~> 5.0"
+  spec.add_dependency "mini_magick"
 
   # For more information and examples about making a new gem, check out our
   # guide at: https://bundler.io/guides/creating_gem.html
