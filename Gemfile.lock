@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    clip-rb (1.0.0)
+    clip-rb (1.0.2)
       logger (~> 1.6)
       mini_magick
       net-http (~> 0.6.0)
