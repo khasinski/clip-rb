@@ -54,7 +54,6 @@ module Clip
             file.write(chunk)
           end
         end
-        puts "Downloaded #{url} to #{destination}"
       else
         raise "Failed to download file: #{response.code} #{response.message}"
       end

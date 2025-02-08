@@ -71,8 +71,6 @@ image_embedding = clip.encode_image("test/fixtures/test.jpg")
 # => [0.22115306556224823, 0.19343754649162292, ...]
 ```
 
-```bash
-
 ## CLI
 
 Additionally you can fetch embeddings by calling:
