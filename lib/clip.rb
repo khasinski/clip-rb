@@ -1,4 +1,5 @@
 require_relative "clip/model"
+require_relative "clip/multilingual_model"
 require_relative "clip/tokenizer"
 require_relative "clip/image_preprocessor"
 require "net/http"
@@ -14,11 +15,17 @@ module Clip
     visual: "clip-ViT-B-32-onnx/resolve/main/visual.onnx?download=true"
   }
 
-  def self.download_models(download_dir)
+  MULTILINGUAL_MODELS = {
+    textual: "XLM-Roberta-Large-Vit-B-32-onnx/resolve/main/XLM-Roberta-/textual.onnx?download=true",
+    textual_bin: "XLM-Roberta-Large-Vit-B-32-onnx/resolve/main/data.bin?download=true",
+    visual: "XLM-Roberta-Large-Vit-B-32-onnx/resolve/main/visual.onnx?download=true"
+  }
+
+  def self.download_models(download_dir, models = MODELS)
     logger ||= Logger.new(STDOUT)
     FileUtils.mkdir_p(download_dir)
 
-    MODELS.each do |type, path|
+    models.each do |type, path|
       uri = URI.join(BASE_URL, path)
       logger.info("Downloading #{type} model from #{uri}")
 

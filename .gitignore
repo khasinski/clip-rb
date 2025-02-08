@@ -13,5 +13,7 @@
 # Ignore the downloaded clip models
 .clip_models/*.onnx
 
+.clip_models/multilingual/*
+
 # Built gems
 *.gem

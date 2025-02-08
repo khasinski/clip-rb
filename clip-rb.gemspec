@@ -38,6 +38,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "logger", "~> 1.6"
   spec.add_dependency "numo-narray", "~> 0.9.2"
   spec.add_dependency "mini_magick"
+  spec.add_dependency "tokenizers"
 
   # For more information and examples about making a new gem, check out our
   # guide at: https://bundler.io/guides/creating_gem.html

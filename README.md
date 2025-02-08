@@ -21,6 +21,7 @@ See [neighbor gem](https://github.com/ankane/neighbor) to learn more about vecto
 
 - Ruby 3.0.0 or later
 - ONNX CLIP models (downloaded automatically on first use)
+- XLM Roberta CLIP model (for multilingual support)
 
 ---
 
@@ -53,6 +54,24 @@ image_embedding = clip.encode_image("test/fixtures/test.jpg")
 ```
 
 💡 Tip: Use cosine similarity for KNN vector search when comparing embeddings!
+
+## Multilingual text embeddings
+
+Since the original CLIP only supports English embeddings this gem now has added support for multilingual text embeddings using the XLM Roberta model.
+
+```ruby
+require 'clip'
+
+clip = Clip::MultilingualModel.new
+
+text_embedding = clip.encode_text("un photo de un gato")
+# => [0.15546110272407532, 0.07329428941011429, ...]
+
+image_embedding = clip.encode_image("test/fixtures/test.jpg")
+# => [0.22115306556224823, 0.19343754649162292, ...]
+```
+
+```bash
 
 ## CLI
 
