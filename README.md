@@ -44,7 +44,9 @@ gem install clip-rb
 ```ruby
 require 'clip'
 
-clip = Clip::Model.new
+# This will download the models on first use (default path is .clip_models)
+# If you don't want this behavior you can pass the path to the models as an argument.
+clip = Clip::Model.new 
 
 text_embedding = clip.encode_text("a photo of a cat")
 # => [0.15546110272407532, 0.07329428941011429, ...]
@@ -62,6 +64,8 @@ Since the original CLIP only supports English embeddings this gem now has added 
 ```ruby
 require 'clip'
 
+# This will download the models on first use (default path is .clip_models/multilingual)
+# If you don't want this behavior you can pass the path to the models as an argument.
 clip = Clip::MultilingualModel.new
 
 text_embedding = clip.encode_text("un photo de un gato")
