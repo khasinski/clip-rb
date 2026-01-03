@@ -6,7 +6,7 @@ module Clip
     def initialize(
       textual_model_path: ".clip_models/multilingual/textual.onnx",
       visual_model_path: ".clip_models/multilingual/visual.onnx",
-      tokenizer: Tokenizers.from_pretrained("M-CLIP/XLM-Roberta-Large-Vit-B-32"),
+      tokenizer: Tokenizers.from_pretrained("xlm-roberta-large"),
       image_preprocessor: Clip::ImagePreprocessor.new,
       download_models: true,
       download_dir: ".clip_models/multilingual"
