@@ -8,7 +8,7 @@ module Clip
     def initialize(bpe_path = __dir__ + "/../bpe_simple_vocab_16e6.txt.gz")
       @byte_encoder = bytes_to_unicode
       @byte_decoder = @byte_encoder.invert
-      merges = Zlib::GzipReader.open(bpe_path).read.split("\n")[1..(49152 - 256 - 2)]
+      merges = Zlib::GzipReader.open(bpe_path).read.force_encoding("UTF-8").split("\n")[1..(49152 - 256 - 2)]
       merges = merges.map { |merge| merge.split(" ") }
       vocab = @byte_encoder.values
       vocab += vocab.map { |v| "#{v}</w>" }

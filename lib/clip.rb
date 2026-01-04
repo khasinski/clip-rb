@@ -1,3 +1,4 @@
+require_relative "clip/version"
 require_relative "clip/model"
 require_relative "clip/multilingual_model"
 require_relative "clip/tokenizer"
