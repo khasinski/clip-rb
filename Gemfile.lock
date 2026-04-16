@@ -46,7 +46,7 @@ GEM
       rb_sys
     tokenizers (0.5.4-arm64-darwin)
     uri (1.0.4)
-    zlib (3.2.1)
+    zlib (3.2.3)
 
 PLATFORMS
   arm64-darwin-24
